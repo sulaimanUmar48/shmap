@@ -1,4 +1,4 @@
-import {model, Schema} from "mongoose"
+import {model, models, Schema} from "mongoose"
 
 const UserSchema = new Schema({
     firstName: { type: String, required: true },
@@ -7,10 +7,10 @@ const UserSchema = new Schema({
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true }, 
     pay: { type: Number, required: true },
-    role: { type: String, enum: ["admin", "user", "guest"], required: true },
+    role: { type: String, enum: ["admin", "staff", "guest"], required: true },
     status: { type: String, enum: ["active", "inactive", "onLeave"], required: true }   
 }, {
     timestamps: true
 })
 
-export const UserModel = model("User", UserSchema)
+export const UserModel = models.User || model("User", UserSchema) 

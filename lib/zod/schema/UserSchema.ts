@@ -10,7 +10,7 @@ export const UserSchema = ZObject({
     phone: z.string(),
     password: z.string().min(7, "Password must be at least 7 characters long"),
     pay: z.number().positive("Pay must be a positive number"),
-    role: z.enum(["admin", "user", "guest"]),
+    role: z.enum(["admin", "staff", "guest"]),
     status: z.enum(["active", "inactive", "onLeave"])
 })
 
