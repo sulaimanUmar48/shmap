@@ -37,7 +37,7 @@ export const POST = async (req: NextRequest) => {
     } catch (error) {
         console.error("User Creation Error:", error)
         return NextResponse.json({
-            error: "An error occurred while processing the request"
+            error: error instanceof Error ? error.message : error
         }, { status: 500 })
     }
 }

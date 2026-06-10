@@ -16,4 +16,7 @@ export const OrganizationSchema = z.object({
     logoUrl: z.url().optional()
 })
 
+export const OrganizationCreateSchema = OrganizationSchema.omit({id: true})
+export const OrganizationUpdateSchema = OrganizationCreateSchema.partial()
+
 export type Organization = z.infer<typeof OrganizationSchema>

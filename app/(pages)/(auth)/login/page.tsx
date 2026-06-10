@@ -48,8 +48,8 @@ export default function Login() {
             console.log("SIGNIN RESPONSE:", res);
 
             if (!res?.ok) {
-            alert(res?.error || "Login failed");
-            return;
+                alert(res?.error || "Login failed");
+                return;
             }
 
 
@@ -63,6 +63,11 @@ export default function Login() {
         }
         catch (error) {
             console.error("Login Error:", error)
+            if (error instanceof Error){
+                alert(error.message)
+            } else {
+                alert("Error Logging In")
+            }
         }
         finally{
             setIsSigningIn(false)
