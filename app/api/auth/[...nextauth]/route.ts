@@ -36,7 +36,8 @@ const handler = NextAuth({
                     firstName: user.firstName,
                     lastName: user.lastName,
                     role: user.role,
-                    status: user.status
+                    status: user.status,
+                    organizationId: user.organizationId
                 }
             }
         })
@@ -52,7 +53,8 @@ const handler = NextAuth({
                 token.firstName = user.firstName
                 token.lastName = user.lastName
                 token.role = user.role
-                token.status = user.status
+                token.status = user.status,
+                token.organizationId = user.organizationId
             }
 
             return token
@@ -66,6 +68,7 @@ const handler = NextAuth({
             session.user.lastName = token.lastName
             session.user.role = token.role
             session.user.status = token.status
+            session.user.organizationId = token.organizationId
         }
         return session
     }},

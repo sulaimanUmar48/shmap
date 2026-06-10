@@ -8,7 +8,8 @@ const UserSchema = new Schema({
     password: { type: String, required: true }, 
     pay: { type: Number, required: true },
     role: { type: String, enum: ["admin", "staff", "guest"], required: true },
-    status: { type: String, enum: ["active", "inactive", "onLeave"], required: true }   
+    status: { type: String, enum: ["active", "inactive", "onLeave"], required: true },
+    organizationId: {type: Schema.Types.ObjectId, ref: "Organization", required: true }   
 }, {
     timestamps: true
 })

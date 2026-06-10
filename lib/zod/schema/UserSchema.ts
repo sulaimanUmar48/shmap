@@ -11,13 +11,13 @@ export const UserSchema = ZObject({
     password: z.string().min(7, "Password must be at least 7 characters long"),
     pay: z.number().positive("Pay must be a positive number"),
     role: z.enum(["admin", "staff", "guest"]),
-    status: z.enum(["active", "inactive", "onLeave"])
+    status: z.enum(["active", "inactive", "onLeave"]),
+    organizationId: z.string()
 })
 
-export const UserSignInSchema = UserSchema.pick({
-    email: true,
-    password: true
-})
+export const UserSignInSchema = UserSchema.pick({ email: true, password: true})
+export const UserCreationSchema = UserSchema.omit({id: true})
+export const UserUpdateSchema = UserSchema.omit({id: true, organizationId: true}).partial()
 
 export type User = z.infer<typeof UserSchema>
 export type UserSignIn = z.infer<typeof UserSignInSchema>
