@@ -14,5 +14,11 @@ export const UserSchema = ZObject({
     status: z.enum(["active", "inactive", "onLeave"])
 })
 
+export const UserSignInSchema = UserSchema.pick({
+    email: true,
+    password: true
+})
+
 export type User = z.infer<typeof UserSchema>
+export type UserSignIn = z.infer<typeof UserSignInSchema>
 

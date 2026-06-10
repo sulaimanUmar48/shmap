@@ -5,6 +5,7 @@ import { UserModel } from "@/lib/mongoose/model/UserSchemaDb"
 import bcrypt from "bcryptjs"
 
 const handler = NextAuth({
+    secret: process.env.NEXTAUTH_SECRET,
     providers: [
         CredentialsProvider({
             name: "Credentials",

@@ -1,6 +1,13 @@
-import Image from "next/image";
+import { getServerSession } from "next-auth/next"
+import { redirect } from "next/navigation";
 
-export default function Home() {
+export default async function Home() {
+
+  const session = await getServerSession()
+  if(!session) {
+    redirect("/login")  
+  }
+
   return (
     <div>
       <h1>
