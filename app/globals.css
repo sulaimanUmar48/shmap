@@ -1,11 +1,20 @@
 @import "tailwindcss";
 
 :root {
+
+  /* THEME */
   --background: #ffffff;
   --foreground: #171717;
   --accent-one: rgb(139, 34, 155);
+
+  /* TEXT */
   --text-main: #000;
+  --text-secondary: #FFF;
+  --text-side-bar: #FFF;
+
+  /* BORDER */
   --border-main: #000;
+  --border-side-bar: #FFF;
 }
 
 @theme inline {
@@ -13,7 +22,10 @@
   --color-foreground: var(--foreground);
   --color-accent-one: var(--accent-one);
   --color-text-main: var(--text-main);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-side-bar: var(--text-side-bar);
   --color-border-main: var(--border-main);
+  --color-border-side-bar: var(--border-side-bar);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
