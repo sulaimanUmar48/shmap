@@ -54,7 +54,7 @@ export const PATCH = async (req: NextRequest, { params } : { params: Promise<{or
 
         const organization = await OrganizationModel.findByIdAndUpdate(organizationId, {
             $set: validatedBody.data
-        }, { new: true, runValidators: true })
+        }, { returnDocument: "after", runValidators: true })
 
         if (!organization){
             return NextResponse.json({
@@ -63,7 +63,7 @@ export const PATCH = async (req: NextRequest, { params } : { params: Promise<{or
         }
 
         return NextResponse.json({
-            message: "Organization Data edited",
+            message: "Organization Updated",
             data: organization
         })
     }

@@ -44,5 +44,5 @@ body {
 }
 
 button{
-  @apply active:scale-95 transition-all ease-out duration-200 cursor-pointer
+  @apply active:scale-95 transition-all ease-out duration-300 cursor-pointer
 }

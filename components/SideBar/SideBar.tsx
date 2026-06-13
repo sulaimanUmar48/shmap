@@ -1,6 +1,6 @@
 "use client"
 
-import {LuCog, LuLayoutDashboard, LuLogOut, LuUser, LuUsers} from "react-icons/lu"
+import {LuClock7, LuCog, LuLayoutDashboard, LuLogOut, LuUser, LuUsers} from "react-icons/lu"
 import { NavLink } from "./NavLink"
 import { FaCircleUser } from "react-icons/fa6"
 import { getServerSession, NextAuthOptions, User } from "next-auth"
@@ -15,6 +15,11 @@ const NAV_OBJECTS: NavLink[] = [
         title: "Dashboard",
         icon: LuLayoutDashboard,
         url: "/"
+    },
+    {
+        title: "Shifts",
+        icon: LuClock7,
+        url: "/shifts"
     },
     {
         title: "Staff",
